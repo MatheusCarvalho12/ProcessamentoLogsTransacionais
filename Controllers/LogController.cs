@@ -22,15 +22,6 @@ public class LogController : ControllerBase
         return Ok(result);
     }
 
-    [HttpGet("{id}")]
-    public async Task<IActionResult> BuscarLogPorId(int id)
-    {
-        var result = await _logInterface.BuscarLogPorId(id);
-        if (!result.Status)
-            return NotFound(result);
-        return Ok(result);
-    } 
-
     [HttpGet("{logId}/transacoes")]
     public async Task<IActionResult> BuscarTransacaoPorId(int logId)
     {
